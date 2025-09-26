@@ -21,7 +21,7 @@ Doorstep freshfoods
     </style>
     <script>
         function orderOnWhatsApp(product) {
-            const phone = "919999999999"; // Replace with your WhatsApp number (country code)
+            const phone = "918977143043"; // Replace with your WhatsApp number (country code)
             const message = encodeURIComponent(`Hello! I want to order: ${product}. Please provide details.`);
             window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
         }
@@ -148,7 +148,7 @@ Doorstep freshfoods
       let order = document.getElementById("order").value;
 
       let message = `Hello, my name is ${name}. My phone number is ${phone}. I want to order: ${order}`;
-      let whatsappURL = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`;
+      let whatsappURL = `https://wa.me/918977143043?text=${encodeURIComponent(message)}`;
       
       window.open(whatsappURL, "_blank");
     });
@@ -229,13 +229,13 @@ Doorstep freshfoods
     </script>
 </body>
 </html>
-            <button class="order-btn" onclick="orderOnWhatsApp('Organic Rice 5 Kg (₹349)')">Order via WhatsApp</button>
+            <button class="order-btn" onclick="orderOnWhatsApp('Organic Rice 5 Kg ')">Order via WhatsApp</button>
         </div>
         <div class="product">
             <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187" alt="Chicken Curry Cut">
             <div class="product-title">Chicken Curry Cut (1 Kg)</div>
             <div class="product-price">₹239</div>
-            <button class="order-btn" onclick="orderOnWhatsApp('Chicken Curry Cut 1 Kg (₹239)')">Order via WhatsApp</button>
+            <button class="order-btn" onclick="orderOnWhatsApp('Chicken Curry Cut 1 Kg ')">Order via WhatsApp</button>
         </div>
         <div class="product">
             <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0" alt="Bread">
