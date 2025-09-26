@@ -160,7 +160,75 @@ Doorstep freshfoods
         <div class="product">
             <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Organic Rice">
             <div class="product-title">Organic Rice (5 Kg)</div>
-            <div class="product-price">₹349</div>
+            <div class="product-price">₹349</div><!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Place Selection</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Delivery Place</h2>
+    <input id="address" type="text" placeholder="Enter your delivery address" style="width: 300px;">
+    <button onclick="codeAddress()">Show on Map</button>
+
+    <div id="map"></div>
+
+    <script>
+        let map;
+        let geocoder;
+        let marker;
+
+        function initMap() {
+            const defaultLocation = { lat: 40.7128, lng: -74.0060 }; // Default: New York City
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: defaultLocation
+            });
+
+            geocoder = new google.maps.Geocoder();
+        }
+
+        function codeAddress() {
+            const address = document.getElementById('address').value;
+            geocoder.geocode({ 'address': address }, function(results, status) {
+                if (status === 'OK') {
+                    map.setCenter(results[0].geometry.location);
+
+                    if (marker) {
+                        marker.setMap(null);
+                    }
+
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+
+    <script async defer 
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
             <button class="order-btn" onclick="orderOnWhatsApp('Organic Rice 5 Kg (₹349)')">Order via WhatsApp</button>
         </div>
         <div class="product">
